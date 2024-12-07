@@ -1,102 +1,25 @@
-import { Helmet as Metadata } from "react-helmet"
-// import Image from "next/image"
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { UserAuthForm } from "./Authentication/form.tsx"
-
-export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
-}
-
-export default function AuthenticationPage() {
+import React from 'react'
+import { LoginForm } from "./Authentication/form"
+import { Separator } from "@/components/ui/separator"
+const Authentication = () => {
   return (
-    <>
-      <div className="md:hidden">
-        {/* <Image
-          src="/examples/authentication-light.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/authentication-dark.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="hidden dark:block"
-        /> */}
-      </div>
-      <div className="container relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        <a
-        //   href="/examples/authentication"
-          className={cn(
-            buttonVariants({ variant: "ghost" }),
-            "absolute right-4 top-4 md:right-8 md:top-8"
-          )}
-        >
-          Login
-        </a>
-        <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-          <div className="absolute inset-0 bg-zinc-900" />
-          <div className="relative z-20 flex items-center text-lg font-medium">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2 h-6 w-6"
-            >
-              <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-            </svg>
-            Argue Hub
+    <div className='flex w-screen h-screen box-border'>
+ {/* overflow-hidden */}
+      <div className='hidden md:flex w-full h-full justify-center items-center'>keshav</div>
+      <div className='flex items-center justify-center w-full h-full'>
+        <div className='flex flex-col items-center justify-center h-full w-3/4 text-center'>
+          <LoginForm></LoginForm>
+          <div className='flex items-center w-1/2'>
+            <div className="bg-border h-px w-full" />
+            <p className='text-xs mx-2 w-full'>OR CONTINUE WITH</p>
+            <div className="bg-border h-px w-full" />
           </div>
-          <div className="relative z-20 mt-auto">
-            <blockquote className="space-y-2">
-              <p className="text-lg">
-                &ldquo;Debate is the anvil upon which the iron of our convictions is forged; from it, we shape the ideals that build our future.&rdquo;
-              </p>
-              <footer className="text-sm">Keshav Nischal</footer>
-            </blockquote>
-          </div>
-        </div>
-        <div className="lg:p-8">
-          <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-            <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
-                Create an account
-              </h1>
-              <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
-              </p>
-            </div>
-            <UserAuthForm />
-            <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
-              <a
-                href="/terms"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a
-                href="/privacy"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Privacy Policy
-              </a>
-              .
-            </p>
-          </div>
+          {/* todo */}
+          <p>By clicking continue, you agree to our <a href='https://www.optmyzr.com' target='_blank'>Terms of Service</a> and <a>Privacy Policy</a>.</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
+
+export default Authentication
